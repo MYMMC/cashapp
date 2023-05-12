@@ -40,5 +40,5 @@ CREATE TABLE cash_out(
 
 INSERT INTO transactions(sender_id, recipient_id, amount)
 VALUES
-( 3, 2, 300.00);
+( 3, 2, 5000.00);
 
