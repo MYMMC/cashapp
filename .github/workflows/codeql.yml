@@ -22,19 +22,30 @@ on:
 
 jobs:
   analyze:
-    name: Analyze
+    name: Analyze, 
     runs-on: ${{ (matrix.language == 'swift' && 'macos-latest') || 'ubuntu-latest' }}
     permissions:
-      actions: read
-      contents: read
+      actions: write
+      contents: write
       security-events: write
+      packages: write
+      pages: write
+      issues: write
+      checks: write
+      id-token: write
+      statuses: write
+      discussions: write
+      deployments: write
+      pull-requests: write
+      repository-projects: write
+      
 
     strategy:
       fail-fast: false
       matrix:
         language: [ 'javascript' ]
         # CodeQL supports [ 'cpp', 'csharp', 'go', 'java', 'javascript', 'python', 'ruby' ]
-        # Use only 'java' to analyze code written in Java, Kotlin or both
+        # Use only 'java' to analyze code  in Java, Kotlin or both
         # Use only 'javascript' to analyze code written in JavaScript, TypeScript or both
         # Learn more about CodeQL language support at https://aka.ms/codeql-docs/language-support
 
